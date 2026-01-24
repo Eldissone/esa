@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Do Subsolo à Superfície — Fundamentos das Operações Petrolíferas</title>
+    <link rel="stylesheet" href="css/stylesHome.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+
+    <script src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.js"></script>
+
+</head>
+
+<style>
+    main {
+        position: relative;
+        width: 100%;
+        margin: 0 auto;
+        min-height: 100vh;
+        column-gap: 3rem;
+        padding: 0px 100px;
+    }
+
+    main>div span {
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        font-size: 1rem;
+        color: var(--color6);
+    }
+
+    main>div h1 {
+        text-transform: capitalize;
+        letter-spacing: 0.8px;
+        font-family: "Tilt Neon", sans-serif;
+        font-weight: 900;
+        font-size: clamp(3.4375rem, 3.25rem + 0.75vw, 4rem);
+        background-image: linear-gradient(45deg, var(--color3));
+        background-size: 100%;
+        background-repeat: repeat;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -moz-background-clip: text;
+        -moz-text-fill-color: transparent;
+
+    }
+
+    main>div hr {
+        display: block;
+        background: var(--color3);
+        height: 0.25rem;
+        width: 8.25rem;
+        border: none;
+        margin: 1.125rem 0 1.875rem 0;
+    }
+
+    main a {
+        display: inline-block;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: var(--white);
+        font-weight: 500;
+        background: var(--color4);
+        border-radius: 16px;
+        transition: 0.3s ease-in-out;
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5),
+            inset 0px 2px 2px rgba(255, 255, 255, 0.2);
+        cursor: pointer;
+        transition: all 0.3s ease-in;
+        opacity: 1;
+    }
+
+    main>div>a {
+        border: 1px solid #9c9b9b;
+        margin-top: 2.188rem;
+        padding: 0.625rem 1.875rem;
+    }
+
+    main>div p {
+        line-height: 1.6;
+        color: var(--color6);
+
+    }
+
+    main>div>a:hover {
+        opacity: 1;
+    }
+
+    .swiper {
+        width: 100%;
+        padding-top: 3.125rem;
+    }
+
+    .swiper-pagination-bullet,
+    .swiper-pagination-bullet-active {
+        background: #fff;
+    }
+
+    .swiper-pagination {
+        bottom: 1.25rem !important;
+    }
+
+    .swiper-slide {
+        width: 18.75rem;
+        height: 28.125rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        align-items: self-start;
+        border-radius: 50px;
+        font-family: "Tilt Neon", sans-serif;
+        position: relative;
+
+    }
+
+    .swiper-slide span {
+        color: var(--white);
+        font-weight: 700;
+        font-size: 1.5rem;
+        line-height: 1.4;
+        margin-bottom: 0.625rem;
+        padding: 0 1.563rem 0 1.563rem;
+        text-transform: uppercase;
+        background-color: var(--color4);
+
+    }
+
+    .swiper-slide p {
+        color: var(--white);
+        font-family: "nunito", sans-serif;
+        font-weight: 300;
+        padding: 0 1.563rem;
+        line-height: 1.6;
+        font-size: 1rem;
+        text-align: start;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .swiper-slide a {
+        margin: 1.25rem 1.563rem 3.438rem 1.563rem;
+        padding: 0.438em 1.875rem;
+        font-size: 0.9rem;
+
+    }
+
+    .swiper-slide div {
+        display: none;
+        opacity: 0;
+        padding-bottom: 0.625rem;
+        border-radius: 50px;
+        background: linear-gradient(to bottom, #0f202730, #203a4358, #2c536400)
+    }
+
+    .swiper-slide div.active {
+        height: 100%;
+        padding: 20px 0px;
+
+    }
+
+    .swiper-slide p.active {
+        display: flex;
+        font-size: 1.12rem;
+        text-align: justify;
+    }
+
+
+    .swiper-slide-active div {
+        display: block;
+        opacity: 1;
+    }
+
+    .swiper-slide--one {
+        background: linear-gradient(to top, #0f2027, #203a4300, #2c536400),
+            url("assets/img/JM.jpeg") no-repeat 50% 10% / cover;
+    }
+
+    .swiper-slide--two {
+        background: linear-gradient(to top, #0f2027, #203a4300, #2c536400),
+            url("assets/img/JM.jpeg") no-repeat 50% 10% / cover;
+    }
+
+    .swiper-slide--three {
+        background: linear-gradient(to top, #0f2027, #203a4300, #2c536400),
+            url("assets/img/JM.jpeg ") no-repeat 50% 10% / cover;
+    }
+
+    .swiper-slide--four {
+        background: linear-gradient(to top, #0f2027, #203a4300, #2c536400),
+            url("assets/img/JM.jpeg") no-repeat 50% 10% / cover;
+    }
+
+    .swiper-slide--five {
+        background: linear-gradient(to top, #0f2027, #203a4300, #2c536400),
+            url("assets/img/JM.jpeg") no-repeat 50% 10% / cover;
+    }
+
+    .swiper-3d .swiper-slide-shadow-left,
+    .swiper-3d .swiper-slide-shadow-right {
+        background-image: none;
+    }
+
+    @media screen and (min-width: 48rem) {
+        main {
+            display: flex;
+            align-items: center;
+        }
+
+    }
+
+    @media screen and (min-width: 93.75rem) {
+        .swiper {
+            width: 85%;
+        }
+    }
+</style>
+
+<body>
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay" onclick="closeMobileMenu()"></div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="flex justify-between items-center mb-10"> 
+            <button onclick="closeMobileMenu()" class="closeMobileMenu text-slate-600 dark:text-slate-300 hover">
+                <span class="material-icons-outlined text-3xl">close</span>
+            </button>
+        </div>
+
+        <nav class="space-y-6 mb-10 nav-links">
+            <a class="block text-lg font-medium text-slate-700 dark:text-slate-300 hover dark:hover py-2" href="#curso"
+                onclick="closeMobileMenu()">Curso</a>
+            <a class="block text-lg font-medium text-slate-700 py-2"
+                href="#problema" onclick="closeMobileMenu()">Problema</a>
+            <a class="block text-lg font-medium text-slate-700 dark:text-slate-300 hover dark:hover py-2"
+                href="#solucao" onclick="closeMobileMenu()">Solução</a>
+            <a class="block text-lg font-medium text-slate-700 dark:text-slate-300 hover dark:hover py-2"
+                href="#estrutura" onclick="closeMobileMenu()">Estrutura</a>
+            <a class="block text-lg font-medium text-slate-700 dark:text-slate-300 hover dark:hover py-2"
+                href="#inscricao" onclick="closeMobileMenu()">Inscrição</a>
+        </nav>
+
+        <div class="mb-8">
+            <h4 class="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-4">Contactos
+            </h4>
+            <div class="space-y-3">
+                <p class="flex items-center gap-2 text-slate-700 dark:text-slate-300">
+                    <span class="material-icons-outlined text-sm">phone</span>
+                    +244 940 086 732
+                </p>
+                <p class="flex items-center gap-2 text-slate-700 dark:text-slate-300">
+                    <span class="material-icons-outlined text-sm">phone</span>
+                    +244 940 086 702
+                </p>
+                <p class="flex items-center gap-2 text-slate-700 dark:text-slate-300">
+                    <span class="material-icons-outlined text-sm">phone</span>
+                    +244 940 517 257
+                </p>
+                <p class="flex items-center gap-2 text-slate-700 dark:text-slate-300">
+                    <span class="material-icons-outlined text-sm">mail</span>
+                    info.energyskillsacademy@gmail.com
+                </p>
+            </div>
+        </div>
+
+        <button
+            class="w-full font-medium py-3 px-6 rounded-lg shadow-lg transition" style="background: var(--color4);">
+            Fale Connosco
+        </button>
+    </div>
+
+    <!-- Header/Navigation -->
+    <header class="header" id="header">
+        <div class="header-div flex justify-between items-center">
+            <div class="logo flex-shrink-0 flex items-center">
+                <img alt="Energy Skills Academy Logo" class="h-full w-full object-cover"
+                    src="assets/LOGO ESA - OFFICIAL-02.png" />
+            </div>
+            <nav class="nav-links hidden md:flex items-center space-x-4">
+                <a href="#curso">Curso</a>
+                <a href="#problema">Problema</a>
+                <a href="#solucao">Solução</a>
+                <a href="#estrutura">Estrutura</a>
+                <a href="#inscricao" class="falar-btn">Fale Connosco</a>
+            </nav>
+            <button class="md:hidden openMobileMenu" onclick="openMobileMenu()">
+                <span class="material-icons-outlined text-3xl">menu</span>
+            </button>
+        </div>
+        </div>
+    </header>
+
+    <section class="home" id="hero">
+        <div class="description">
+            <h1 class="title">
+                <span class="gradient-text">Domine os Fundamentos das Operações Petrolíferas </span>
+            </h1>
+            <p class="paragraph">
+                • Parceria: <strong>Energy Skills
+                    Academy</strong> e a
+            </p>
+
+            <h2><strong>Universidade Católica de Angola</strong> </h2>
+
+
+
+            <div class="form-btn">
+                <a class="btn" aria-label="Inscreva-se via WhatsApp"
+                    href="https://wa.me/244940086732?text=Quero%20inscrever-me%20no%20curso%20Do%20Subsolo%20%C3%A0%20Superf%C3%ADcie%20(Energy%20Skills%20Academy)"
+                    target="_blank" rel="noopener noreferrer">
+                    <span>Garantir minha vaga</span>
+                    <ion-icon name="arrow-forward-outline"></ion-icon>
+                </a>
+            </div>
+
+        </div>
+
+
+        <div class="users-color-container">
+            <span class="item" style="--i: 1"></span>
+            <img class="item" src="assets/image.jpg" style="--i: 2" alt="" />
+            <span class="item" style="--i: 3"></span>
+            <img class="item" src="assets/beautiful-silhouette-port-machinery-sunset.jpg" style="--i: 4" alt="" />
+
+            <img class="item" src="assets/plat.jpg" style="--i: 10" alt="" />
+            <span class="item" style="--i: 11"></span>
+            <img class="item" src="assets/images.webp" style="--i: 12" alt="" />
+            <span class="item" style="--i: 5"></span>
+
+            <span class="item" style="--i: 9"></span>
+            <img class="item" src="assets/Mars_Tension-leg_Platform.jpg" style="--i: 8" alt="" />
+            <span class="item" style="--i: 7"></span>
+            <img class="item" src="assets/eng.jpg" style="--i: 6" alt="" />
+        </div>
+    </section>
+
+    <main>
+        <div class="desc-curso" id="curso">
+            <div class="curso gap-2">
+                <span class="material-icons-outlined text-sm">school</span>
+                Curso Intensivo • Certificado
+            </div>
+            <h1>Do subsolo à superfície</h1>
+            <hr>
+            <p>Fundamentos Técnicos das Operações Petrolíferas</p> <br>
+            <div class="space-y-4 event">
+                <div class="flex items-start gap-3">
+                    <span class="material-icons-outlined">event</span>
+                    <div>
+                        <span class="font-bold">23 de Fevereiro a 06 de Março</span>
+                    </div>
+                </div>
+                <div class="flex items-start gap-3">
+                    <span class="material-icons-outlined">schedule</span>
+                    <div>
+                        <span class="font-semibold">Carga horária:</span> 40 horas
+                    </div>
+                </div>
+                <div class="flex items-start gap-3">
+                    <span class="material-icons-outlined">place</span>
+                    <div>
+                        <span class="font-semibold">Local:</span> Universidade Católica de Angola – IRMAT
+                    </div>
+                </div>
+            </div>
+
+            <a href="https://wa.me/244940086732?text=Quero%20inscrever-me%20no%20curso%20Do%20Subsolo%20%C3%A0%20Superf%C3%ADcie%20(Energy%20Skills%20Academy)"
+                target="_blank" rel="noopener noreferrer">
+                Inscrição aberta
+                <i class="fa-brands fa-whatsapp"></i>
+            </a>
+        </div>
+
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide swiper-slide--one">
+                    <div>
+                        <span>Jackson Muxindo</span>
+                        <p>Engenheiro de Petróleos, Co‑fundador e CEO da Energy Skills Academy. Especialista em
+                            Fluidos de Perfuração e Completação, professor na Universidade Católica de Angola e
+                            instrutor no ISPTEC, com mais de 1.000 horas de treinamento. Experiência em WBM/OBM,
+                            ensaios laboratoriais, cálculos críticos para poços HPHT e controlo de poços; orientou
+                            mais de 20 trabalhos científicos voltados a desafios estratégicos da indústria.</p>
+                        <a id="btn-ver">ver mais</a>
+                    </div>
+                </div>
+                <div class="swiper-slide swiper-slide--two">
+                    <div>
+                        <span>Silveira Luís Victorino</span>
+                        <p>Engenheiro de Petróleo, mestre em Engenharia de Reservatórios pela UFRJ e docente
+                            universitário. Mais de 11 anos em Oil & Gas com forte atuação em sistemas submarinos de
+                            produção e dimensionamento térmico de pacotes SURF em ambientes offshore. Atua em
+                            revitalização de campos maduros onshore em Angola e pesquisa no GESAR, integrando prática
+                            de campo e rigor científico.</p>
+                        <a id="btn-ver">ver mais</a>
+                    </div>
+                </div>
+
+                <div class="swiper-slide swiper-slide--three">
+                    <div>
+                        <span>Eng.º Luzolo Eduardo</span>
+                        <p>Geocientista de Petróleo, especialista em Geologia de Operações e Wellsite Geology, com
+                            mais de 30 anos de experiência. Atuou em Geoservices, Halliburton, Esso e Sonangol P&P,
+                            coordenando operações em blocos 15, 24 e 33, com monitorização de poços, avaliação de
+                            formações, MWD e wireline. Docente e formador, integra projetos nacionais como PLANAGEO,
+                            aliando experiência de campo à transmissão prática do conhecimento.</p>
+                        <a id="btn-ver">ver mais</a>
+                    </div>
+                </div>
+
+                <div class="swiper-slide swiper-slide--four">
+                    <div>
+                        <span>Eng. Shark Houi</span>
+                        <p>
+                            Sharks are a group of elasmobranch fish characterized by a cartilaginous skeleton, five to
+                            seven gill slits on the sides of the head, and pectoral fins that are not fused to the head.
+                        </p>
+                        <a id="btn-ver">ver mais</a>
+                    </div>
+                </div>
+
+                <div class="swiper-slide swiper-slide--five">
+                    <div>
+                        <span>Dolphin Moor</span>
+                        <p>
+                            Dolphins are widespread. Most species prefer the warm waters of the tropic zones, but some,
+                            such as the right whale dolphin, prefer colder climates. Dolphins feed largely on fish and
+                            squid, but a few, such as the orca, feed on large mammals such as seals.
+                        </p>
+                        <a id="btn-ver">ver mais</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-pagination"></div>
+        </div>
+    </main>
+
+    <section class="ProblemaSolucao">
+        <!-- O Problema -->
+        <div id="problema" class="py-16 bg-background-light dark:bg-background-dark">
+            <div class="max-w-3xl mx-auto px-4">
+                <h2 class="">
+                    O Problema — A “Dor” do Público
+                </h2>
+                <p class="text-slate-700  mb-6">
+                    A indústria petrolífera é complexa, técnica e multidisciplinar.
+                    A cadeia de operações envolve <span class="font-semibold">geologia, engenharia, operações,
+                        segurança,
+                        economia e tecnologia</span>,
+                    da prospecção ao abandono dos poços.
+                </p>
+                <p class="text-slate-700 dark:text-slate-300 mb-4">
+                    Mesmo profissionais que já atuam noutras áreas da indústria energética enfrentam dificuldades em:
+                </p>
+                <ul class="list-disc">
+                    <li>Entender como as operações se conectam</li>
+                    <li>Comunicar-se tecnicamente com equipas especializadas</li>
+                    <li>Ter uma visão clara do ciclo completo do poço</li>
+                </ul>
+                <p class="mt-6 text-slate-800 dark:text-slate-200 font-semibold">
+                    Sem esta visão integrada, torna-se difícil crescer, ingressar ou se destacar no setor petrolífero.
+                </p>
+            </div>
+        </div>
+
+        <!-- A Solução -->
+        <div id="solucao" class="py-16 bg-surface-light dark:bg-surface-dark">
+            <div class="max-w-3xl mx-auto px-4">
+                <h2 class="text-2xl md:text-3xl font-display font-bold text-slate-900 dark:text-white mb-4">
+                    A Solução — Posicionamento do Curso
+                </h2>
+                <p class="text-slate-700 dark:text-slate-300 mb-6">
+                    Este curso foi pensado para quem quer estar um passo à frente.
+                    Foi concebido para fornecer uma <span class="font-semibold">visão clara, estruturada e
+                        prática</span> de
+                    todo o ciclo de vida de um poço de petróleo.
+                </p>
+                <p class="text-slate-700 dark:text-slate-300 mb-6">
+                    Com foco na <span class="font-semibold">realidade de Angola</span>, alinhado às <span
+                        class="font-semibold">melhores práticas internacionais</span>, a formação conecta:
+                </p>
+                <ul class="list-disc pl-6 space-y-2 text-slate-700 dark:text-slate-300">
+                    <li>Conhecimento académico</li>
+                    <li>Experiência de campo</li>
+                    <li>Aplicação prática dos conceitos</li>
+                </ul>
+                <p class="mt-6 text-red-600 dark:text-red-400 font-semibold">
+                    Ideal para estudantes, recém-formados, técnicos e profissionais que desejam ingressar ou evoluir no
+                    setor petrolífero.
+                </p>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Inscrição -->
+    <section id="inscricao" class="inscricao-section">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h3 class="text-2xl md:text-3xl font-display font-bold mb-6">
+                Garanta já a sua vaga
+            </h3>
+            <p class="mb-6">
+                Inscreva-se agora via WhatsApp e receba todas as informações.
+            </p>
+            <a class="cta-btn"
+                href="https://wa.me/244940086732?text=Quero%20inscrever-me%20no%20curso%20Do%20Subsolo%20%C3%A0%20Superf%C3%ADcie%20(Energy%20Skills%20Academy)"
+                target="_blank" rel="noopener noreferrer">
+                Inscreva-se via WhatsApp
+                <i class="fa-brands fa-whatsapp"></i>
+            </a>
+
+        </div>
+    </section>
+
+    <!-- Estrutura do Curso -->
+    <section id="estrutura" class="estrutura-section">
+        <div class="estrutura-content">
+            <h3 class="text-2xl md:text-3xl font-display font-bold  mb-4">
+                Estrutura do Curso — Visão Geral
+            </h3>
+            <p class="text-slate-700 dark:text-slate-300 mb-6">
+                O que você vai aprender ao longo das 40 horas. O curso aborda os principais pilares das operações
+                petrolíferas, incluindo:
+            </p>
+            <ul class="estrutura-list">
+                <li>Estrutura e organização da indústria petrolífera</li>
+                <li>Prospecção e pesquisa de hidrocarbonetos</li>
+                <li>Perfuração de poços: equipamentos, processos e segurança</li>
+                <li>Fluidos de perfuração e desafios operacionais</li>
+                <li>Avaliação de formações e interpretação de dados</li>
+                <li>Cimentação e completação de poços</li>
+                <li>Instalações de produção</li>
+                <li>Intervenção e abandono de poços</li>
+            </ul>
+        </div>
+
+        <div class="estrutura-badges">
+            <div class="badge badge-level">
+                <span class="material-icons-outlined">flag</span>
+                Nível: Introdutório • Intermédio
+            </div>
+            <div class="badge badge-approach">
+                <span class="material-icons-outlined">science</span>
+                Abordagem: Técnica, prática e integrada
+            </div>
+        </div>
+         <div class="sticker">
+        <div class="sticker-header">
+            ESTE CURSO TERÁ DUAS EDIÇÕES
+        </div>
+
+        <div class="edition">
+            <span class="badge">1</span>
+            <div class="content">
+                <h4>Dias de semana</h4>
+                <p>23 de Fevereiro à 06 de Março</p>
+                <strong>14h às 18h</strong>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="edition">
+            <span class="badge">2</span>
+            <div class="content">
+                <h4>Aos sábados</h4>
+                <p>07 de Março à 11 de Abril</p>
+                <strong>08h às 17h</strong>
+            </div>
+        </div>
+    </div>
+    </section>
+
+
+
+    <!-- Footer -->
+    <footer class="py-14 text-white">
+        <div class="container">
+            <div class="content-top md:grid-cols-4 gap-10">
+                <div>
+                    <div class="logo flex items-center ">
+                        <img alt="Energy Skills Academy Logo" class="h-full w-full object-cover"
+                            src="assets/LOGO ESA - OFFICIAL.png" />
+
+                        <img alt="Ucn Logo" class="h-full w-full object-cover"
+                            src="assets/Universidade Católica de Angola - UCAN (nalogoo.com).PNG" />
+                    </div>
+
+                </div>
+
+                <div>
+                    <h4 class="font-bold mb-4">Serviços</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover transition-colors">Formação</a></li>
+                        <li><a href="#" class="hover transition-colors">Talks</a></li>
+                        <li><a href="#" class="hover transition-colors">Energia & Petróleo</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold mb-4">Empresa</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover transition-colors">Sobre</a></li>
+                        <li><a href="#" class="hover transition-colors">Carreiras</a></li>
+                        <li><a href="#" class="hover transition-colors">Blog</a></li>
+                        <li><a href="#" class="hover transition-colors">Contato</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold mb-4">Legal</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover transition-colors">Termos de Uso</a></li>
+                        <li><a href="#" class="hover transition-colors">Privacidade</a></li>
+                        <li><a href="#" class="hover transition-colors">Cookies</a></li>
+                        <li><a href="#" class="hover transition-colors">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section-divider my-8"></div>
+
+            <div class="flex flex-col md:flex-row justify-between items-center text-gray-400 text-sm">
+                <p>© 2026 EnergySkillsAcademy. Todos os direitos reservados.</p>
+                <div class="flex gap-4 mt-4 md:mt-0">
+                    <!-- WhatsApp -->
+                    <button data-platform="whatsapp"
+                        class="w-12 h-12 bg-green-500 text-white rounded-full hover:bg-green-600 transition flex items-center justify-center text-xl">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </button>
+
+                    <!-- LinkedIn -->
+                    <button data-platform="linkedin"
+                        class="w-12 h-12 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition flex items-center justify-center text-xl">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </button>
+
+                    <!-- Twitter / X -->
+                    <button data-platform="twitter"
+                        class="w-12 h-12 bg-black text-white rounded-full hover:bg-neutral-800 transition flex items-center justify-center text-xl">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </button>
+
+                    <!-- Facebook -->
+                    <button data-platform="facebook"
+                        class="w-12 h-12 bg-blue-800 text-white rounded-full hover:bg-blue-900 transition flex items-center justify-center text-xl">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.js"></script>
+    <script type="module" src="js/script.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/header.js"></script>
+
+</body>
+
+</html>
