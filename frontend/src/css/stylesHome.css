@@ -59,7 +59,7 @@ body {
     background: transparent;
 }
 
-.logo {
+header .logo {
     height: 100%;
     width: 30%;
 
@@ -504,37 +504,25 @@ strong::after {
 }
 
 .sticker {
-    max-width: 300px;
+    display: flex;
+    max-width: 700px;
     background: linear-gradient(135deg, var(--color4), var(--color5));
-    color: #fff;
+    color: var(--white);
     border-radius: 16px;
-    padding: 10px;
+    padding: 20px;
+    gap: 10px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
-    position: absolute;
-    right: 10px;
-    bottom: 5%;
+  margin-top: 20px;
+
 }
 
 .sticker strong::after {
     display: none;
 }
 
-.sticker-header {
-    background: var(--color2);
-    color: #fff;
-    font-weight: 700;
-    font-size: 0.9rem;
-    text-align: center;
-    padding: 5px;
-    border-radius: 5px;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
 .edition {
     display: flex;
-    gap: 16px;
+    gap: 20px;
     align-items: center;
 }
 
@@ -549,7 +537,6 @@ strong::after {
     font-weight: 700;
     font-size: 1.1rem;
     flex-shrink: 0;
-
 }
 
 .content h4 {
@@ -583,7 +570,8 @@ strong::after {
     flex-direction: column;
     gap: 0.75rem;
     bottom: 40px;
-    position: absolute;
+    /* position: absolute; */
+
 }
 
 @media (min-width: 640px) {
@@ -663,15 +651,25 @@ footer {
 
 footer .logo {
     display: flex;
-    width: 100%;
-    height: auto;
-
-    img {
-        width: 50%;
-
-    }
+    height: 120px;
 
 }
+
+.contact {
+    cursor: pointer;
+
+}
+
+.logo1 , .logo2 {
+    height: 100%;
+    flex: 1;
+}
+
+.logo2 IMG {
+    object-fit: contain;
+}
+
+
 
 footer .content-top {
     display: grid;
@@ -739,12 +737,11 @@ footer .content-top {
     }
 
     .sticker {
-
-        max-width: 100%;
+        flex-direction: column;
+        width: 100%;
         padding: 24px;
         position: relative;
-        margin-top: 10px;
-        right: 0;
+        
     }
 
     .openMobileMenu {
