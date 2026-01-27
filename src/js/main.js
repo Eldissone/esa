@@ -110,16 +110,62 @@ document.addEventListener('DOMContentLoaded', function () {
 
 });
 
+const btnVer = document.querySelectorAll(".btn-ver");
 
-const btnVer = document.querySelectorAll("#btn-ver");
-const slideDiv = document.querySelector(".swiper-slide div");
-const slideText = document.querySelector(".swiper-slide p");
-
-
+// Adiciona evento de clique em cada botão
 btnVer.forEach(ver => {
     ver.addEventListener('click', function (e) {
+        // Previne que o clique se propague para o documento
+        e.stopPropagation();
+        
+        // Encontra o slide específico deste botão
+        const slideDiv = this.closest('.swiper-slide').querySelector('div');
+        const slideText = this.closest('.swiper-slide').querySelector('p');
+        
+        // Fecha todos os outros slides abertos
+        btnVer.forEach(otherBtn => {
+            if (otherBtn !== this) {
+                const otherSlideDiv = otherBtn.closest('.swiper-slide').querySelector('div');
+                const otherSlideText = otherBtn.closest('.swiper-slide').querySelector('p');
+                const otherSpan = otherBtn.closest('.swiper-slide').querySelector('span');
+                
+                otherSlideDiv.classList.remove('active');
+                otherSlideText.classList.remove('active');
+                if (otherSpan) otherSpan.classList.remove('active');
+                otherBtn.textContent = 'ver mais';
+            }
+        });
+        
+        // Alterna o estado do slide atual
         slideDiv.classList.toggle('active');
         slideText.classList.toggle('active');
+        
+        // Opcional: adiciona classe ao span se necessário
+        const slideSpan = this.closest('.swiper-slide').querySelector('span');
+        if (slideSpan) slideSpan.classList.toggle('active');
+        
+        // Muda o texto do botão
+        if (slideText.classList.contains('active')) {
+            this.textContent = 'ver menos';
+        } else {
+            this.textContent = 'ver mais';
+        }
     });
 });
 
+// Fecha todos os slides ao clicar em qualquer lugar da página
+document.addEventListener('click', function(e) {
+    // Verifica se o clique NÃO foi em um botão "ver mais" nem dentro de um slide ativo
+    if (!e.target.closest('.btn-ver') && !e.target.closest('.swiper-slide div.active')) {
+        btnVer.forEach(btn => {
+            const slideDiv = btn.closest('.swiper-slide').querySelector('div');
+            const slideText = btn.closest('.swiper-slide').querySelector('p');
+            const slideSpan = btn.closest('.swiper-slide').querySelector('span');
+            
+            slideDiv.classList.remove('active');
+            slideText.classList.remove('active');
+            if (slideSpan) slideSpan.classList.remove('active');
+            btn.textContent = 'ver mais';
+        });
+    }
+});

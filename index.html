@@ -62,13 +62,14 @@
         margin: 1.125rem 0 1.875rem 0;
     }
 
-    main a {
+    main a, 
+    .btn-ver {
         display: inline-block;
         text-decoration: none;
         text-transform: uppercase;
-        color: var(--white);
-        font-weight: 500;
-        background: var(--color4);
+        color: var(--white)!important;
+        font-weight: 500!important;
+        background: var(--color4)!important;
         border-radius: 16px;
         transition: 0.3s ease-in-out;
         box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5),
@@ -78,7 +79,10 @@
         opacity: 1;
     }
 
-    main>div>a {
+
+
+    main>div>a, 
+    .btn-ver{
         border: 1px solid #9c9b9b;
         margin-top: 2.188rem;
         padding: 0.625rem 1.875rem;
@@ -87,10 +91,10 @@
     main>div p {
         line-height: 1.6;
         color: var(--color6);
-
     }
 
-    main>div>a:hover {
+    main>div>a:hover,
+    .btn-ver:hover {
         opacity: 1;
     }
 
@@ -147,7 +151,7 @@
         overflow: hidden;
     }
 
-    .swiper-slide a {
+    .swiper-slide .btn-ver {
         margin: 1.25rem 1.563rem 3.438rem 1.563rem;
         padding: 0.438em 1.875rem;
         font-size: 0.9rem;
@@ -163,9 +167,10 @@
     }
 
     .swiper-slide div.active {
-        height: 100%;
+        max-height: 98%;
+        overflow-y: scroll;
         padding: 20px 0px;
-
+        background: linear-gradient(to bottom, #01020261, #080c0d82, #0305063a)
     }
 
     .swiper-slide p.active {
@@ -187,12 +192,12 @@
 
     .swiper-slide--two {
         background: linear-gradient(to top, #0f2027, #203a4300, #2c536400),
-            url("src/assets/img/JM.jpeg") no-repeat 50% 10% / cover;
+            url("src/assets/img/Silvera.jpeg") no-repeat 50% 10% / cover;
     }
 
     .swiper-slide--three {
         background: linear-gradient(to top, #0f2027, #203a4300, #2c536400),
-            url("src/assets/img/JM.jpeg ") no-repeat 50% 10% / cover;
+            url("src/assets/img/Eduardo.jpeg") no-repeat 50% 10% / cover;
     }
 
     .swiper-slide--four {
@@ -382,58 +387,139 @@
                 <div class="swiper-slide swiper-slide--one">
                     <div>
                         <span>Jackson Muxindo</span>
-                        <p>Engenheiro de Petróleos, Co‑fundador e CEO da Energy Skills Academy. Especialista em
-                            Fluidos de Perfuração e Completação, professor na Universidade Católica de Angola e
-                            instrutor no ISPTEC, com mais de 1.000 horas de treinamento. Experiência em WBM/OBM,
-                            ensaios laboratoriais, cálculos críticos para poços HPHT e controlo de poços; orientou
-                            mais de 20 trabalhos científicos voltados a desafios estratégicos da indústria.</p>
-                        <a id="btn-ver">ver mais</a>
+                        <p>
+                             É Engenheiro de Petróleos, Co-fundador e CEO da Energy Skills Academy e
+                            especialista em Fluidos de Perfuração e Completação de Poços.
+
+                            Atua na formação técnica e académica de profissionais do setor energético em Angola, com
+                            foco na integração entre conhecimento científico, prática operacional e exigências reais da
+                            indústria.
+
+                            É Professor Universitário na Universidade Católica de Angola, onde leciona Engenharia de
+                            Perfuração I e II e disciplinas laboratoriais de Rochas e Fluidos e Fluidos de Perfuração.
+
+                            Atua também como Instrutor no ISPTEC, somando mais de 1.000 horas de treinamento intensivo,
+                            tendo formado técnicos e engenheiros que hoje integram empresas como SLB, KCA Deutag e Azule
+                            Energy.
+
+                            A sua experiência técnica concentra-se em sistemas de lama WBM e OBM, ensaios laboratoriais
+                            avançados, gestão de contaminação, cálculos críticos aplicados a poços HPHT e controlo de
+                            poços.
+
+                            Como pesquisador e orientador, já acompanhou mais de 20 trabalhos científicos voltados a
+                            desafios estratégicos da indústria petrolífera.
+
+                            A sua atuação é guiada pela missão de formar profissionais altamente qualificados, capazes
+                            de responder com competência técnica, pensamento crítico e inovação aos desafios da
+                            indústria energética em Angola e no contexto internacional.
+                        </p>
+                        <button class="btn-ver">ver mais</button>
                     </div>
                 </div>
                 <div class="swiper-slide swiper-slide--two">
                     <div>
                         <span>Silveira Luís Victorino</span>
-                        <p>Engenheiro de Petróleo, mestre em Engenharia de Reservatórios pela UFRJ e docente
-                            universitário. Mais de 11 anos em Oil & Gas com forte atuação em sistemas submarinos de
-                            produção e dimensionamento térmico de pacotes SURF em ambientes offshore. Atua em
-                            revitalização de campos maduros onshore em Angola e pesquisa no GESAR, integrando prática
-                            de campo e rigor científico.</p>
-                        <a id="btn-ver">ver mais</a>
+                        <p>
+
+                        </p>
+                        <button class="btn-ver">ver mais</button>
                     </div>
                 </div>
 
                 <div class="swiper-slide swiper-slide--three">
                     <div>
                         <span>Eng.º Luzolo Eduardo</span>
-                        <p>Geocientista de Petróleo, especialista em Geologia de Operações e Wellsite Geology, com
-                            mais de 30 anos de experiência. Atuou em Geoservices, Halliburton, Esso e Sonangol P&P,
-                            coordenando operações em blocos 15, 24 e 33, com monitorização de poços, avaliação de
-                            formações, MWD e wireline. Docente e formador, integra projetos nacionais como PLANAGEO,
-                            aliando experiência de campo à transmissão prática do conhecimento.</p>
-                        <a id="btn-ver">ver mais</a>
+                        <p>
+                            Geocientista de Petróleo | Especialista em Geologia de Operações e Wellsite Geology
+
+                            O Eng.º Luzolo Eduardo é geocientista de petróleo angolano, Licenciado em Geologia pela
+                            Universidade Agostinho Neto, com mais de 30 anos de experiência na indústria de Oil & Gas.
+
+                            Construiu uma carreira sólida em empresas de referência como Geoservices, Halliburton, Esso
+                            Exploration Angola e Sonangol Pesquisa & Produção, onde actuou como Operations Geologist,
+                            Wellsite Geologist e Chefe do Departamento das Bacias de Benguela e Namibe.
+
+                            Participou activamente em programas de perfuração e desenvolvimento de campos nos blocos 15,
+                            24 e 33, coordenando actividades geológicas em operações offshore e onshore, incluindo
+                            monitorização de poços, avaliação de formações, MWD, wireline e testes de formação, em
+                            articulação com equipas multidisciplinares e empresas de serviços internacionais.
+
+                            Possui vasta experiência em interpretação sísmica 2D e 3D, avaliação de potencial
+                            petrolífero, pré-sal, sistemas petrolíferos e estudos das bacias de Benguela, Namibe, Kwanza
+                            e bacias interiores de Angola, tendo integrado projectos estratégicos nacionais como o
+                            PLANAGEO.
+
+                            É também docente universitário, leccionando Geologia do Petróleo no curso de Geofísica da
+                            Universidade Agostinho Neto, e formador em temas como Mudlogging, Wellsite Geology e
+                            Geologia de Operações, aliando sólida experiência de campo à transmissão prática do
+                            conhecimento.
+                        </p>
+                        <button class="btn-ver">ver mais</button>
                     </div>
                 </div>
 
                 <div class="swiper-slide swiper-slide--four">
                     <div>
-                        <span>Eng. Shark Houi</span>
+                        <span>Eng.º Jaime Teixeira</span>
                         <p>
-                            Sharks are a group of elasmobranch fish characterized by a cartilaginous skeleton, five to
-                            seven gill slits on the sides of the head, and pectoral fins that are not fused to the head.
+                            Engenheiro de Perfuração | Especialista em MWD e Operações Offshore
+                            O Eng.º Jaime Teixeira é engenheiro de perfuração angolano, com especialidade em MWD, com
+                            mais de 35 anos de experiência na indústria de Oil & Gas.
+
+                            Construiu uma carreira sólida em empresas e projetos de referência, incluindo ESPA,
+                            ExxonMobil, Doris Engineering e Sonangol Pesquisa & Produção. Iniciou-se como engenheiro
+                            estagiário de perfuração em 1986 e participou em campanhas offshore de desenvolvimento dos
+                            poços do Bloco 3 (1987–1991).
+
+                            Participou em projetos internacionais de grande relevância, como o Front End Engineering
+                            Design do Kizomba na ExxonMobil, em Houston, onde contribuiu para o desenho e posicionamento
+                            da sonda de perfuração em TLP, cálculo das fases de perfuração, custo e cronograma
+                            (1999–2001), e em estudos de campos marginais e confiabilidade de equipamentos submarinos na
+                            Bacia do Congo com a Doris Engineering, em Paris (2005–2006).
+
+                            Na Sonangol, ocupou diversos cargos de liderança, incluindo Diretor de Produção no Angola
+                            Deepwater Consortium, Assistente Técnico do Diretor de Produção, Diretor do Gabinete do
+                            Administrador da Sonangol EP, e Diretor dos Blocos 4/05, 2/85 e 2/05, coordenando a
+                            transferência do Bloco 2/05 para a Somoil.
+
+                            Possui formação internacional em perfuração, subsea technologies e deepwater operations,
+                            complementada por cursos em gestão, liderança, gestão de custos e finanças para não
+                            financeiros.
+
+                            É também docente universitário, leccionando disciplinas relacionadas à perfuração e
+                            operações de poço, combinando vasta experiência prática de campo com formação técnica
+                            avançada, capacitando profissionais para atuar de forma eficaz na indústria petrolífera.
                         </p>
-                        <a id="btn-ver">ver mais</a>
+                        <button class="btn-ver">ver mais</button>
                     </div>
                 </div>
 
                 <div class="swiper-slide swiper-slide--five">
                     <div>
-                        <span>Dolphin Moor</span>
+                        <span>Emanuel Leopoldo</span>
                         <p>
-                            Dolphins are widespread. Most species prefer the warm waters of the tropic zones, but some,
-                            such as the right whale dolphin, prefer colder climates. Dolphins feed largely on fish and
-                            squid, but a few, such as the orca, feed on large mammals such as seals.
+                            O Eng.º Emanuel Leopoldo é engenheiro de petróleo angolano, com Mestrado em Engenharia de
+                            Petróleo pelo Imperial College London (1991) e Licenciatura em Engenharia Química pela
+                            Glamorgan University, Reino Unido (1986), com mais de 40 anos de experiência internacional
+                            na indústria de Oil, Gas e LNG, incluindo gestão executiva, operações e desenvolvimento de
+                            negócios. Construiu uma carreira sólida em empresas de referência, como Chevron, onde atuou
+                            por 34 anos em operações internacionais de petróleo, gás e LNG, BPC Angola no setor
+                            bancário, Petrofund Angola em investimentos privados, AFM Oil & Gas em desenvolvimento de
+                            negócios, e KAYA Soluções Climáticas em operações agroflorestais.
+
+                            Possui vasta experiência
+                            técnica e de gestão em operações e produção, reservatórios, HES/Excelência Operacional,
+                            planejamento estratégico e de negócios, coordenação de joint-ventures, serviços técnicos,
+                            gestão de projetos especiais e comerciais, cadeia de suprimentos, contratos, compliance,
+                            gestão de riscos, auditoria e qualidade organizacional.
+
+                            É também docente universitário,
+                            lecionando Engenharia Química e de Petróleo no ISPTEC e na Universidade Agostinho Neto,
+                            combinando ampla experiência de campo e corporativa com formação acadêmica avançada. Membro
+                            ativo de organizações internacionais como OEA, AIChemE, SPE, PMI, e certificado PMP,
+                            reforçando sua expertise em gestão de projetos e operações no setor energético.
                         </p>
-                        <a id="btn-ver">ver mais</a>
+                        <button class="btn-ver">ver mais</button>
                     </div>
                 </div>
             </div>
@@ -519,26 +605,111 @@
         </div>
     </section>
 
-    <!-- Estrutura do Curso -->
+ <!-- Estrutura do Curso -->
     <section id="estrutura" class="estrutura-section">
         <div class="estrutura-content">
-            <h3 class="text-2xl md:text-3xl font-display font-bold  mb-4">
-                Estrutura do Curso — Visão Geral
+            <h3 class="text-2xl md:text-3xl font-display font-bold mb-4">
+                Estrutura Modular do Curso — 40 Horas
             </h3>
             <p class="text-slate-700 dark:text-slate-300 mb-6">
-                O que você vai aprender ao longo das 40 horas. O curso aborda os principais pilares das operações
-                petrolíferas, incluindo:
+                O curso está organizado em 8 módulos sequenciais que cobrem toda a cadeia de valor da indústria petrolífera:
             </p>
             <ul class="estrutura-list">
-                <li>Estrutura e organização da indústria petrolífera</li>
-                <li>Prospecção e pesquisa de hidrocarbonetos</li>
-                <li>Perfuração de poços: equipamentos, processos e segurança</li>
-                <li>Fluidos de perfuração e desafios operacionais</li>
-                <li>Avaliação de formações e interpretação de dados</li>
-                <li>Cimentação e completação de poços</li>
-                <li>Instalações de produção</li>
-                <li>Intervenção e abandono de poços</li>
+                <li><strong>Módulo I:</strong> Introdução à Indústria de Petróleo e Gás: Estrutura, Cadeia de Valor e Contexto Angolano</li>
+                <li><strong>Módulo II:</strong> Prospecção e Exploração: Geologia Aplicada às Operações Petrolíferas</li>
+                <li><strong>Módulo III:</strong> Perfuração de Poços: Sistemas, Processos Operacionais e Segurança</li>
+                <li><strong>Módulo IV:</strong> Fluidos de Perfuração: Fundamentos, Propriedades e Desafios Operacionais</li>
+                <li><strong>Módulo V:</strong> Cimentação e Completação de Poços: Fundamentos e Aplicações Operacionais</li>
+                <li><strong>Módulo VI:</strong> Avaliação de Formações: Perfis, Testes e Interpretação Operacional</li>
+                <li><strong>Módulo VII:</strong> Sistemas Subsea e Instalações de Produção: Do Poço à Superfície</li>
+                <li><strong>Módulo VIII:</strong> Intervenção e Abandono de Poços: Operações Seguras e Sustentáveis</li>
             </ul>
+            
+            <div class="estrutura-table">
+                <div class="table-header">
+                    <div class="table-cell">Módulo</div>
+                    <div class="table-cell">Título do Módulo</div>
+                    <div class="table-cell">Instrutor</div>
+                    <div class="table-cell">Carga Horária</div>
+                    <div class="table-cell">Objetivo Principal</div>
+                </div>
+                
+                <!-- Módulo I -->
+                <div class="table-row">
+                    <div class="table-cell" data-label="Módulo">I</div>
+                    <div class="table-cell" data-label="Título do Módulo">Introdução à Indústria de Petróleo e Gás: Estrutura, Cadeia de Valor e Contexto Angolano</div>
+                    <div class="table-cell" data-label="Instrutor">Engº Jaime Teixeira e Engº Jackson Muxindo</div>
+                    <div class="table-cell" data-label="Carga Horária">4h</div>
+                    <div class="table-cell" data-label="Objetivo Principal">Compreender a estrutura e funcionamento da indústria petrolífera, nacional e internacional</div>
+                </div>
+                
+                <!-- Módulo II -->
+                <div class="table-row">
+                    <div class="table-cell" data-label="Módulo">II</div>
+                    <div class="table-cell" data-label="Título do Módulo">Prospecção e Exploração: Geologia Aplicada às Operações Petrolíferas</div>
+                    <div class="table-cell" data-label="Instrutor">Engº Luzolo Eduardo</div>
+                    <div class="table-cell" data-label="Carga Horária">4h</div>
+                    <div class="table-cell" data-label="Objetivo Principal">Identificar métodos de exploração e sistemas geológicos produtores</div>
+                </div>
+                
+                <!-- Módulo III -->
+                <div class="table-row">
+                    <div class="table-cell" data-label="Módulo">III</div>
+                    <div class="table-cell" data-label="Título do Módulo">Perfuração de Poços: Sistemas, Processos Operacionais e Segurança</div>
+                    <div class="table-cell" data-label="Instrutor">Engº Jaime Teixeira e Engº Jackson Muxindo</div>
+                    <div class="table-cell" data-label="Carga Horária">4h</div>
+                    <div class="table-cell" data-label="Objetivo Principal">Entender o processo de perfuração, equipamentos, operação segura e fluxo de trabalho</div>
+                </div>
+                
+                <!-- Módulo IV -->
+                <div class="table-row">
+                    <div class="table-cell" data-label="Módulo">IV</div>
+                    <div class="table-cell" data-label="Título do Módulo">Fluidos de Perfuração: Fundamentos, Propriedades e Desafios Operacionais</div>
+                    <div class="table-cell" data-label="Instrutor">Engº Jackson Muxindo</div>
+                    <div class="table-cell" data-label="Carga Horária">4h</div>
+                    <div class="table-cell" data-label="Objetivo Principal">Compreender tipos de fluidos, funções, propriedades e cálculo de volumes</div>
+                </div>
+                
+                <!-- Módulo V -->
+                <div class="table-row">
+                    <div class="table-cell" data-label="Módulo">V</div>
+                    <div class="table-cell" data-label="Título do Módulo">Cimentação e Completação de Poços: Fundamentos e Aplicações Operacionais</div>
+                    <div class="table-cell" data-label="Instrutor">Engº Emanuel Leopoldo</div>
+                    <div class="table-cell" data-label="Carga Horária">4h</div>
+                    <div class="table-cell" data-label="Objetivo Principal">Aprender os conceitos de cimentação e completação e sua aplicação na integridade do poço</div>
+                </div>
+                
+                <!-- Módulo VI -->
+                <div class="table-row">
+                    <div class="table-cell" data-label="Módulo">VI</div>
+                    <div class="table-cell" data-label="Título do Módulo">Avaliação de Formações: Perfis, Testes e Interpretação Operacional</div>
+                    <div class="table-cell" data-label="Instrutor">MSc Silveira Victorino</div>
+                    <div class="table-cell" data-label="Carga Horária">4h</div>
+                    <div class="table-cell" data-label="Objetivo Principal">Interpretar dados de formação e estimar o potencial produtivo do reservatório</div>
+                </div>
+                
+                <!-- Módulo VII -->
+                <div class="table-row">
+                    <div class="table-cell" data-label="Módulo">VII</div>
+                    <div class="table-cell" data-label="Título do Módulo">Sistemas Subsea e Instalações de Produção: Do Poço à Superfície</div>
+                    <div class="table-cell" data-label="Instrutor">MSc Silveira Victorino</div>
+                    <div class="table-cell" data-label="Carga Horária">4h</div>
+                    <div class="table-cell" data-label="Objetivo Principal">Conhecer os principais componentes e funcionamento das instalações de produção e sistemas subsea</div>
+                </div>
+                
+                <!-- Módulo VIII -->
+                <div class="table-row">
+                    <div class="table-cell" data-label="Módulo">VIII</div>
+                    <div class="table-cell" data-label="Título do Módulo">Intervenção e Abandono de Poços: Operações Seguras e Sustentáveis</div>
+                    <div class="table-cell" data-label="Instrutor">Engº Jackson Muxindo e MSc Silveira Victorino</div>
+                    <div class="table-cell" data-label="Carga Horária">4h</div>
+                    <div class="table-cell" data-label="Objetivo Principal">Compreender procedimentos de intervenção e abandono seguro de poços</div>
+                </div>
+            </div>
+            
+            <div class="acreditation-note">
+                Acreditação em processo de definição.
+            </div>
         </div>
 
         <div class="sticker">
@@ -573,21 +744,18 @@
                 Abordagem: Técnica, prática e integrada
             </div>
         </div>
-
-
-
     </section>
 
 
     <!-- Footer -->
     <footer class="py-14 text-white">
-        <div class="container">
-            <div class="content-top md:grid-cols-4 gap-10">
+        <div class="container ">
+            <div class="content-top flex justify-between">
                 <div>
                     <div class="logo flex items-center ">
                         <div class="logo1">
                             <img alt="Energy Skills Academy Logo" class="h-full w-full object-cover"
-                                src="src/assets/LOGO ESA - OFFICIAL-03.jpg" />
+                                src="src/assets/LOGO ESA - OFFICIAL-03.png" />
                         </div>
                         <div class="logo2">
                             <img alt="Ucn Logo" class="h-full w-full object-cover"
@@ -597,42 +765,15 @@
 
                 </div>
 
-                <div>
-                    <h4 class="font-bold mb-4">Serviços</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="hover transition-colors">Formação</a></li>
-                        <li><a href="#" class="hover transition-colors">Talks</a></li>
-                        <li><a href="#" class="hover transition-colors">Energia & Petróleo</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="font-bold mb-4">Empresa</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="hover transition-colors">Sobre</a></li>
-                        <li><a href="#" class="hover transition-colors">Carreiras</a></li>
-                        <li><a href="#" class="hover transition-colors">Blog</a></li>
-                        <li><a href="#" class="hover transition-colors">Contato</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="font-bold mb-4">Legal</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="hover transition-colors">Termos de Uso</a></li>
-                        <li><a href="#" class="hover transition-colors">Privacidade</a></li>
-                        <li><a href="#" class="hover transition-colors">Cookies</a></li>
-                        <li><a href="#" class="hover transition-colors">FAQ</a></li>
-                    </ul>
-                </div>
             </div>
 
             <div class="section-divider my-8"></div>
 
-            <div class="contact flex flex-col md:flex-row justify-between items-center text-sm pointer">
-                <p>© 2026 EnergySkillsAcademy. Todos os direitos reservados.</p>
-                <div class=" flex gap-4">
-                    <p class="flex items-center gap-2 ">
+            <div class="contact flex flex-col md:flex-row justify-between items-center pointer">
+                <div class="contact-t items-center justify-center flex gap-2">
+                    <h2 class="text-2xl">Contactos:</h2>
+                    
+                    <p class="flex items-center gap-2">
                         <span class="material-icons-outlined text-sm">phone</span>
                         +244 940 086 732
                     </p>
@@ -644,7 +785,7 @@
                         <span class="material-icons-outlined text-sm">phone</span>
                         +244 940 517 257
                     </p>
-                   
+
                 </div>
                 <div class="flex gap-4 mt-4 md:mt-0">
                     <!-- WhatsApp -->
@@ -674,12 +815,18 @@
 
             </div>
         </div>
+                <p>© 2026 EnergySkillsAcademy. Todos os direitos reservados.</p>
+
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.js"></script>
     <script type="module" src="src/js/script.js"></script>
     <script src="src/js/main.js"></script>
     <script src="src/js/header.js"></script>
+
+    <script>
+
+    </script>
 
 </body>
 

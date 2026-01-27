@@ -40,6 +40,7 @@ img {
 
 body {
     position: relative;
+    width: 100vw;
     background: #ffffff;
 }
 
@@ -139,7 +140,7 @@ header .logo {
     height: 100vh;
     background: #F8FAFC;
     z-index: 100;
-    padding-top: 8rem;
+    padding-top: 10rem;
     padding-left: 2rem;
     padding-right: 2rem;
     padding-bottom: 2rem;
@@ -444,6 +445,8 @@ strong::after {
     }
 }
 
+
+/* Seção Estrutura */
 #estrutura.estrutura-section {
     min-height: 90vh;
     display: flex;
@@ -451,6 +454,9 @@ strong::after {
     align-items: center;
     justify-content: center;
     position: relative;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 40px 20px;
 }
 
 #estrutura.estrutura-section .estrutura-content {
@@ -459,13 +465,30 @@ strong::after {
     align-items: center;
     justify-content: center;
     background: rgba(255, 255, 255, 0.04);
-
+    width: 100%;
 }
 
 .estrutura-section h3 {
     color: var(--color4);
-    font-size: clamp(2rem, 5vw, 4rem);
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
 
+.text-slate-700 {
+    color: #374151;
+}
+
+.dark .text-slate-300 {
+    color: #d1d5db;
+}
+
+.mb-4 {
+    margin-bottom: 1rem;
+}
+
+.mb-6 {
+    margin-bottom: 1.5rem;
 }
 
 .estrutura-list {
@@ -473,13 +496,15 @@ strong::after {
     padding-left: 0;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 50px;
-
+    gap: 30px;
+    margin: 2rem 0;
+    width: 100%;
 }
 
 @media (max-width: 768px) {
     .estrutura-list {
         grid-template-columns: 1fr;
+        gap: 20px;
     }
 }
 
@@ -487,8 +512,8 @@ strong::after {
     position: relative;
     padding-left: 1.75rem;
     color: var(--color6);
-    font-size: 1.4rem;
-
+    font-size: 1.1rem;
+    line-height: 1.6;
 }
 
 .estrutura-list li::before {
@@ -503,21 +528,175 @@ strong::after {
     box-shadow: 0 0 0 4px rgba(108, 193, 100, 0.2);
 }
 
+.estrutura-list li strong {
+    color: var(--color4);
+    font-weight: 600;
+}
+
+/* Tabela de Módulos */
+.estrutura-table {
+    margin: 2rem 0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    background: var(--white);
+    border: 1px solid #e5e7eb;
+    width: 100%;
+}
+
+.table-header {
+    display: grid;
+    grid-template-columns: 0.5fr 2fr 1fr 0.5fr 1.5fr;
+    background: linear-gradient(135deg, var(--color4), var(--color5));
+    color: var(--white);
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.table-row {
+    display: grid;
+    grid-template-columns: 0.5fr 2fr 1fr 0.5fr 1.5fr;
+    border-bottom: 1px solid #e5e7eb;
+    transition: background-color 0.3s ease;
+}
+
+.table-row:hover {
+    background-color: rgba(108, 193, 100, 0.05);
+}
+
+.table-row:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.02);
+}
+
+.table-cell {
+    padding: 1rem;
+    border-right: 1px solid #e5e7eb;
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    line-height: 1.4;
+
+}
+
+.table-cell:last-child {
+    border-right: none;
+}
+
+.table-header .table-cell {
+    font-size: 0.95rem;
+    padding: 1.2rem 1rem;
+}
+
+.acreditation-note {
+    margin-top: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--color6);
+    font-style: italic;
+    text-align: center;
+    padding: 0.75rem;
+    background: rgba(108, 193, 100, 0.08);
+    border-radius: 8px;
+    border-left: 4px solid var(--color1);
+    width: 100%;
+}
+
+/* Responsividade da Tabela */
+@media (max-width: 1024px) {
+
+    .table-header,
+    .table-row {
+        grid-template-columns: 0.5fr 1.8fr 1.2fr 0.5fr 1.5fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .estrutura-table {
+        border: none;
+        box-shadow: none;
+        background: transparent;
+    }
+
+    .table-header {
+        display: none;
+    }
+
+    .table-row {
+        display: flex;
+        flex-direction: column;
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+        border: 1px solid #e5e7eb;
+        border-radius: 12px;
+        background: var(--white);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .table-cell {
+        display: flex;
+        padding: 0.75rem 0;
+        border-right: none;
+        border-bottom: 1px solid #e5e7eb;
+        width: 100%;
+    }
+
+    .table-cell:last-child {
+        border-bottom: none;
+    }
+
+    .table-cell::before {
+        content: attr(data-label);
+        font-weight: 600;
+        width: 140px;
+        min-width: 140px;
+        color: var(--color4);
+        font-size: 0.9rem;
+    }
+
+    .table-cell:first-child {
+        font-weight: 600;
+        font-size: 1.1rem;
+        color: var(--color4);
+        border-bottom: 2px solid var(--color1);
+        padding-bottom: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .table-cell:first-child::before {
+        content: "Módulo ";
+        width: auto;
+        min-width: auto;
+    }
+}
+
+/* Sticker de Horários */
 .sticker {
     display: flex;
     max-width: 700px;
     background: linear-gradient(135deg, var(--color4), var(--color5));
     color: var(--white);
     border-radius: 16px;
-    padding: 20px;
-    gap: 10px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
-  margin-top: 20px;
-
+    padding: 25px 30px;
+    gap: 30px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    margin: 40px auto;
+    width: 100%;
+    justify-content: center;
 }
 
-.sticker strong::after {
-    display: none;
+@media (max-width: 640px) {
+    .sticker {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .divider {
+        height: 1px;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.15);
+        margin: 10px 0;
+    }
 }
 
 .edition {
@@ -527,75 +706,99 @@ strong::after {
 }
 
 .sticker .badge {
-    width: 38px;
-    height: 38px;
+    width: 42px;
+    height: 42px;
     background: var(--color2);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: 700;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     flex-shrink: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .content h4 {
     margin: 0;
-    font-size: 1.1rem;
-
+    font-size: 1.2rem;
+    font-weight: 600;
 }
 
 .content p {
-    margin: 4px 0;
-    font-size: 0.95rem;
+    margin: 6px 0;
+    font-size: 1rem;
     opacity: 0.9;
-
 }
 
 .content strong {
-    font-size: 1rem;
+    font-size: 1.1rem;
     color: #ffd28a;
+    display: block;
+    margin-top: 4px;
 }
 
 .divider {
-    height: 1px;
+    height: auto;
+    width: 1px;
     background: rgba(255, 255, 255, 0.15);
-    margin: 18px 0;
 }
 
-
+/* Badges */
 .estrutura-badges {
-    margin-top: 1.5rem;
+    margin-top: 2.5rem;
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
-    bottom: 40px;
-    /* position: absolute; */
-
+    gap: 1rem;
+    width: 100%;
+    max-width: 700px;
 }
 
 @media (min-width: 640px) {
     .estrutura-badges {
         flex-direction: row;
+        justify-content: center;
     }
 }
 
 .estrutura-badges .badge {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    padding: 8px 12px;
-    border-radius: 16px;
+    gap: 10px;
+    padding: 12px 20px;
+    border-radius: 50px;
     font-weight: 600;
     color: var(--white);
+    font-size: 0.90rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .badge-level {
-    background: var(--color4);
+    background: linear-gradient(135deg, var(--color4), #404a5a);
 }
 
 .badge-approach {
-    background: var(--color3);
+    background: linear-gradient(135deg, var(--color5), var(--color5));
+}
+
+.material-icons-outlined {
+    font-size: 1.2rem;
+}
+
+/* Tipografia */
+
+.font-bold {
+    font-weight: 700;
+}
+
+.text-2xl {
+    font-size: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .text-3xl {
+        font-size: 1.875rem;
+    }
 }
 
 .inscricao-section {
@@ -618,7 +821,6 @@ strong::after {
         p {
             font-size: 1.3rem;
         }
-
 
     }
 
@@ -651,7 +853,7 @@ footer {
 
 footer .logo {
     display: flex;
-    height: 120px;
+    height: 200px;
 
 }
 
@@ -660,19 +862,44 @@ footer .logo {
 
 }
 
-.logo1 , .logo2 {
+.logo1,
+.logo2 {
     height: 100%;
     flex: 1;
 }
 
 .logo2 IMG {
     object-fit: contain;
+    padding: 15px;
 }
 
+   .contact-t {
+    
+        position: relative;
 
+        h2 {
+            position: absolute;
+            left: 0;
+            top: -10px;
+
+        }
+    }
+
+footer {
+    padding: 40px 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+footer p {
+    text-align: center;
+    margin-top: 30px;
+}
 
 footer .content-top {
-    display: grid;
+    display: flex;
 }
 
 /* Ajustes de responsividade para mobile e tablet */
@@ -718,8 +945,8 @@ footer .content-top {
         padding: 10px 25px;
     }
 
-    .logo {
-        width: 50%;
+    header .logo {
+        width: 200px;
     }
 
     main {
@@ -741,7 +968,6 @@ footer .content-top {
         width: 100%;
         padding: 24px;
         position: relative;
-        
     }
 
     .openMobileMenu {
@@ -840,20 +1066,33 @@ footer .content-top {
     }
 
     footer {
-        padding: 40px 25px;
+        padding: 40px 30px;
     }
 
     footer .logo {
-        height: 100px;
+        display: flex;
+        height: 180px;
+        width: 100% !important;
 
-        img {
-            object-fit: contain;
-        }
     }
 
     footer .content-top {
-        grid-template-columns: 1fr;
-        gap: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .logo2 IMG {
+    object-fit: contain;
+    padding: 5px;
+}
+
+    .contact-t {
+        flex-direction: column;
+        align-items: start;
+        width: 100%;
+        gap: 0;
     }
 
     .swiper-slide {
@@ -928,7 +1167,7 @@ footer .content-top {
     .home {
         grid-template-columns: 45% 50%;
         gap: 60px;
-        padding: 130px 70px;
+        padding: 150px 70px;
     }
 
     .users-color-container {
@@ -967,7 +1206,7 @@ footer .content-top {
 @media (max-width: 460px) {
     .home {
         gap: 0;
-        padding: 30px 40px;
+        padding: 80px 40px;
     }
 
     #form {
