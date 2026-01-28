@@ -41,6 +41,7 @@ img {
 body {
     position: relative;
     width: 100vw;
+    overflow-x: hidden;
     background: #ffffff;
 }
 
@@ -587,19 +588,6 @@ strong::after {
     padding: 1.2rem 1rem;
 }
 
-.acreditation-note {
-    margin-top: 1.5rem;
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--color6);
-    font-style: italic;
-    text-align: center;
-    padding: 0.75rem;
-    background: rgba(108, 193, 100, 0.08);
-    border-radius: 8px;
-    border-left: 4px solid var(--color1);
-    width: 100%;
-}
 
 /* Responsividade da Tabela */
 @media (max-width: 1024px) {
@@ -633,7 +621,7 @@ strong::after {
     }
 
     .table-cell {
-        display: flex;
+        display: flex !important;
         padding: 0.75rem 0;
         border-right: none;
         border-bottom: 1px solid #e5e7eb;
