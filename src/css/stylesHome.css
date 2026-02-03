@@ -660,7 +660,7 @@ strong::after {
 /* Sticker de Horários */
 .sticker {
     display: flex;
-    max-width: 1000px;
+    max-width: 1200px;
     background: linear-gradient(135deg, var(--color4), var(--color5));
     color: var(--white);
     border-radius: 16px;
@@ -693,7 +693,7 @@ strong::after {
     align-items: center;
 }
 
-.sticker .badge {
+.sticker .badge{
     width: 42px;
     height: 42px;
     background: var(--color2);
@@ -705,6 +705,7 @@ strong::after {
     font-size: 1.2rem;
     flex-shrink: 0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    
 }
 
 .content h4 {
@@ -743,27 +744,21 @@ strong::after {
 }
 
 
-@media (min-width: 640px) {
-    .estrutura-badges {
-        flex-direction: row;
-        justify-content: center;
-    }
-}
 
-.estrutura-badges .badge {
+.badge-level, .badge-approach {
     display: inline-flex;
     align-items: center;
     gap: 10px;
     padding: 12px 20px;
-    border-radius: 50px;
+    border-radius: 5px;
     font-weight: 600;
     color: var(--white);
-    font-size: 1.2rem;
+    font-size: 1rem;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .badge-level {
-    background: linear-gradient(135deg, var(--color4), #404a5a);
+    background: linear-gradient(135deg, #404a5a, #404a5a);
 }
 
 .badge-approach {
