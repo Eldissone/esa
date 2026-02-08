@@ -1,17 +1,30 @@
+let lastScrollY = window.scrollY;
+
 window.addEventListener('scroll', function () {
     const header = document.getElementById('header');
     const heroSection = document.getElementById('hero');
+    const currentScrollY = window.scrollY;
 
-    if (header && heroSection) {
-        const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+    if (!header || !heroSection) return;
 
-        if (window.scrollY > heroBottom - 100) {
-            header.classList.add('fixed');
-        } else {
-            header.classList.remove('fixed');
+    const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+
+    if (currentScrollY > heroBottom - 100) {
+        header.classList.add('fixed');
+
+        if (currentScrollY > lastScrollY) {
+            header.classList.add('hide');
         }
+        else {
+            header.classList.remove('hide');
+        }
+    } else {
+        header.classList.remove('fixed', 'hide');
     }
+
+    lastScrollY = currentScrollY;
 });
+
 
 window.addEventListener('scroll', function () {
     const sections = document.querySelectorAll('section[id]');

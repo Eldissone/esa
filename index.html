@@ -133,7 +133,7 @@
         display: flex;
         flex-direction: column;
         justify-content: end;
-        align-items: self-start;
+        align-items: center;
         border-radius: 50px;
         font-family: "Tilt Neon", sans-serif;
         position: relative;
@@ -152,23 +152,52 @@
         margin-bottom: 0.625rem;
         padding: 0 1.563rem 0 1.563rem;
         text-transform: uppercase;
+        text-align: center;
         background-color: var(--color4);
+        display: flex;
+        justify-content: center;
+        align-self: center !important;
+        margin-top: 10px;
+        border-radius: 50px;
 
     }
 
     .swiper-slide p {
         color: var(--white);
-        font-family: "nunito", sans-serif;
+        font-family: "Nunito", sans-serif;
         font-weight: 300;
         padding: 0 1.563rem;
         line-height: 1.6;
         font-size: 1rem;
         text-align: start;
+
         display: -webkit-box;
         -webkit-line-clamp: 4;
         -webkit-box-orient: vertical;
         overflow: hidden;
     }
+
+
+    .swiper-slide p.active {
+        font-size: 1.12rem;
+        display: block;
+        max-height: 280px;
+        overflow-y: auto;
+        -webkit-line-clamp: unset;
+        -webkit-box-orient: unset;
+    }
+
+
+    .swiper-slide-active p::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    .swiper-slide-active p::-webkit-scrollbar-thumb {
+        background: var(--color4);
+        border-radius: 10px;
+
+    }
+
 
     .swiper-slide .btn-ver {
         margin: 1.25rem 1.563rem 3.438rem 1.563rem;
@@ -182,25 +211,19 @@
         opacity: 0;
         padding-bottom: 0.625rem;
         border-radius: 50px;
-        background: linear-gradient(to bottom, #0f202730, #203a4358, #2c536400)
+        background: linear-gradient(to bottom, #0f202730, #203a4358, #2c536400);
     }
 
     .swiper-slide div.active {
         max-height: 100%;
-        overflow-y: scroll;
-        padding: 20px 0px;
+        padding: 10px 0px;
         background: linear-gradient(to bottom, #01020261, #080c0d82, #0305063a)
     }
 
-    .swiper-slide p.active {
-        display: flex;
-        font-size: 1.12rem;
-        text-align: justify;
-    }
-
-
     .swiper-slide-active div {
-        display: block;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         opacity: 1;
     }
 
@@ -617,8 +640,8 @@
                 </div>
             </div> -->
 
-        </div>
-        <div class="swiper-pagination"></div>
+            </div>
+            <div class="swiper-pagination"></div>
     </main>
 
     <section class="ProblemaSolucao">
@@ -943,9 +966,7 @@
     <script src="src/js/main.js"></script>
     <script src="src/js/header.js"></script>
 
-    <script>
 
-    </script>
 
 </body>
 
