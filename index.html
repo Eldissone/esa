@@ -99,6 +99,7 @@
     .swiper {
         width: 100%;
         padding-top: 3.125rem;
+        position: relative;
     }
 
     .titulo-swiper {
@@ -170,7 +171,6 @@
         line-height: 1.6;
         font-size: 1rem;
         text-align: start;
-
         display: -webkit-box;
         -webkit-line-clamp: 4;
         -webkit-box-orient: vertical;
@@ -249,7 +249,7 @@
 
     .swiper-slide--five {
         background: linear-gradient(to top, #0f2027, #203a4300, #2c536400),
-            url("src/assets/img/JM.jpeg") no-repeat 50% 10% / cover;
+            url("src/assets/img/jaime.jpeg") no-repeat 50% 10% / cover;
     }
 
     .swiper-3d .swiper-slide-shadow-left,
@@ -262,8 +262,6 @@
             display: flex;
             align-items: center;
         }
-
-
     }
 
     @media screen and (min-width: 93.75rem) {
@@ -274,11 +272,119 @@
     }
 
     @media screen and (max-width: 768px) {
-        .titulo-swiper {
-            display: flex !important;
+
+        .titulo-swiper,
+        .swiper-top {
+            display: block !important;
+        }
+    }
+
+    .swiper-top {
+        display: none;
+        padding: 10px 0;
+        position: relative;
+    }
+
+    .btn-conteiner {
+        display: flex;
+        justify-content: center;
+        --color-text: #9ee5fa;
+        --color-background: #353535;
+        --color-outline: #9ee5fa80;
+        --color-shadow: #00000080;
+    }
+
+    .btn-content {
+       
+        z-index: 111;
+        display: flex;
+        align-items: center;
+        padding: 0px 3px;
+        text-decoration: none;
+        font-family: "Poppins", sans-serif;
+        font-size: 25px;
+        color: var(--color-text);
+        background: var(--color-background);
+        transition: 1s;
+        border-radius: 100px;
+        box-shadow: 0 0 0.2em 0 var(--color-background);
+        transition: 0.5s;
+    }
+
+    .btn-content:hover,
+    .btn-content:focus {
+        transition: 0.5s;
+        -webkit-animation: btn-content 1s;
+        animation: btn-content 1s;
+        outline: 0.1em solid transparent;
+        outline-offset: 0.2em;
+        box-shadow: 0 0 0.4em 0 var(--color-background);
+    }
+
+    .btn-content .icon-arrow {
+        transition: 0.5s;
+        margin-right: 25px;
+        transform: scale(0.6);
+        transition: 0.5s;
+    }
+
+    .icon-arrow {
+        width: 20px;
+        margin-left: 15px;
+        position: relative;
+        top: 6%;
+    }
+
+    #arrow-icon-one {
+        transition: 0.4s;
+        transform: translateX(-60%);
+    }
+
+    #arrow-icon-two {
+        transition: 0.5s;
+        transform: translateX(-30%);
+    }
+
+    .btn-content #arrow-icon-three {
+        animation: color_anim 1s infinite 0.2s;
+    }
+
+    .btn-content #arrow-icon-one {
+        transform: translateX(0%);
+        animation: color_anim 1s infinite 0.6s;
+    }
+
+    .btn-content #arrow-icon-two {
+        transform: translateX(0%);
+        animation: color_anim 1s infinite 0.4s;
+    }
+
+    @keyframes color_anim {
+        0% {
+            fill: white;
         }
 
+        50% {
+            fill: var(--color-background);
+        }
 
+        100% {
+            fill: #9ee5fa;
+        }
+    }
+
+    @-webkit-keyframes btn-content {
+        0% {
+            outline: 0.2em solid var(--color-background);
+            outline-offset: 0;
+        }
+    }
+
+    @keyframes btn-content {
+        0% {
+            outline: 0.2em solid var(--color-background);
+            outline-offset: 0;
+        }
     }
 </style>
 
@@ -435,7 +541,32 @@
         </div>
 
         <div class="swiper">
-            <h2 class="titulo-swiper">Conheça seus instrutores</h2>
+            <div class="swiper-top">
+
+                <h2 class="titulo-swiper">Conheça seus instrutores</h2>
+
+                <div class="btn-conteiner">
+                    <a href="#" class="btn-content">
+                        <span class="icon-arrow">
+                            <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"
+                                version="1.1" viewBox="0 0 66 43" height="30px" width="30px">
+                                <g fill-rule="evenodd" fill="none" stroke-width="1" stroke="none" id="arrow">
+                                    <path fill="#9ee5fa"
+                                        d="M40.1543933,3.89485454 L43.9763149,0.139296592 C44.1708311,-0.0518420739 44.4826329,-0.0518571125 44.6771675,0.139262789 L65.6916134,20.7848311 C66.0855801,21.1718824 66.0911863,21.8050225 65.704135,22.1989893 C65.7000188,22.2031791 65.6958657,22.2073326 65.6916762,22.2114492 L44.677098,42.8607841 C44.4825957,43.0519059 44.1708242,43.0519358 43.9762853,42.8608513 L40.1545186,39.1069479 C39.9575152,38.9134427 39.9546793,38.5968729 40.1481845,38.3998695 C40.1502893,38.3977268 40.1524132,38.395603 40.1545562,38.3934985 L56.9937789,21.8567812 C57.1908028,21.6632968 57.193672,21.3467273 57.0001876,21.1497035 C56.9980647,21.1475418 56.9959223,21.1453995 56.9937605,21.1432767 L40.1545208,4.60825197 C39.9574869,4.41477773 39.9546013,4.09820839 40.1480756,3.90117456 C40.1501626,3.89904911 40.1522686,3.89694235 40.1543933,3.89485454 Z"
+                                        id="arrow-icon-one"></path>
+                                    <path fill="#9ee5fa"
+                                        d="M20.1543933,3.89485454 L23.9763149,0.139296592 C24.1708311,-0.0518420739 24.4826329,-0.0518571125 24.6771675,0.139262789 L45.6916134,20.7848311 C46.0855801,21.1718824 46.0911863,21.8050225 45.704135,22.1989893 C45.7000188,22.2031791 45.6958657,22.2073326 45.6916762,22.2114492 L24.677098,42.8607841 C24.4825957,43.0519059 24.1708242,43.0519358 23.9762853,42.8608513 L20.1545186,39.1069479 C19.9575152,38.9134427 19.9546793,38.5968729 20.1481845,38.3998695 C20.1502893,38.3977268 20.1524132,38.395603 20.1545562,38.3934985 L36.9937789,21.8567812 C37.1908028,21.6632968 37.193672,21.3467273 37.0001876,21.1497035 C36.9980647,21.1475418 36.9959223,21.1453995 36.9937605,21.1432767 L20.1545208,4.60825197 C19.9574869,4.41477773 19.9546013,4.09820839 20.1480756,3.90117456 C20.1501626,3.89904911 20.1522686,3.89694235 20.1543933,3.89485454 Z"
+                                        id="arrow-icon-two"></path>
+                                    <path fill="#9ee5fa"
+                                        d="M0.154393339,3.89485454 L3.97631488,0.139296592 C4.17083111,-0.0518420739 4.48263286,-0.0518571125 4.67716753,0.139262789 L25.6916134,20.7848311 C26.0855801,21.1718824 26.0911863,21.8050225 25.704135,22.1989893 C25.7000188,22.2031791 25.6958657,22.2073326 25.6916762,22.2114492 L4.67709797,42.8607841 C4.48259567,43.0519059 4.17082418,43.0519358 3.97628526,42.8608513 L0.154518591,39.1069479 C-0.0424848215,38.9134427 -0.0453206733,38.5968729 0.148184538,38.3998695 C0.150289256,38.3977268 0.152413239,38.395603 0.154556228,38.3934985 L16.9937789,21.8567812 C17.1908028,21.6632968 17.193672,21.3467273 17.0001876,21.1497035 C16.9980647,21.1475418 16.9959223,21.1453995 16.9937605,21.1432767 L0.15452076,4.60825197 C-0.0425130651,4.41477773 -0.0453986756,4.09820839 0.148075568,3.90117456 C0.150162624,3.89904911 0.152268631,3.89694235 0.154393339,3.89485454 Z"
+                                        id="arrow-icon-three"></path>
+                                </g>
+                            </svg>
+                        </span>
+                    </a>
+                </div>
+            </div>
+
             <div class="swiper-wrapper">
                 <div class="swiper-slide swiper-slide--one">
                     <div>
@@ -573,74 +704,50 @@
                     </div>
                 </div>
 
-                <!--
-                <div class="swiper-slide swiper-slide--four">
+                <div class="swiper-slide swiper-slide--five">
                     <div>
                         <span>Eng.º Jaime Teixeira</span>
                         <p>
                             Engenheiro de Perfuração | Especialista em MWD e Operações Offshore
-                            O Eng.º Jaime Teixeira é engenheiro de perfuração angolano, com especialidade em MWD, com
-                            mais de 35 anos de experiência na indústria de Oil & Gas.
 
-                            Construiu uma carreira sólida em empresas e projetos de referência, incluindo ESPA,
-                            ExxonMobil, Doris Engineering e Sonangol Pesquisa & Produção. Iniciou-se como engenheiro
-                            estagiário de perfuração em 1986 e participou em campanhas offshore de desenvolvimento dos
-                            poços do Bloco 3 (1987–1991).
+                            O Eng.º Jaime Teixeira é engenheiro de perfuração angolano, com mais de 35 anos de
+                            experiência na indústria de Oil & Gas, destacando-se pela sua participação em projetos de
+                            classe mundial e pelo exercício de funções estratégicas de decisão ao mais alto nível
+                            técnico e institucional.
 
-                            Participou em projetos internacionais de grande relevância, como o Front End Engineering
-                            Design do Kizomba na ExxonMobil, em Houston, onde contribuiu para o desenho e posicionamento
-                            da sonda de perfuração em TLP, cálculo das fases de perfuração, custo e cronograma
-                            (1999–2001), e em estudos de campos marginais e confiabilidade de equipamentos submarinos na
-                            Bacia do Congo com a Doris Engineering, em Paris (2005–2006).
+                            Teve participação direta no Front End Engineering Design (FEED) do Projeto Kizomba, na
+                            ExxonMobil, em Houston, onde atuou no desenho dos poços, definição das fases de perfuração,
+                            estimativas de custos e cronogramas, bem como no posicionamento da sonda de perfuração
+                            instalada em Tension Leg Platform (TLP), num dos mais emblemáticos projetos de deepwater em
+                            Angola.
 
-                            Na Sonangol, ocupou diversos cargos de liderança, incluindo Diretor de Produção no Angola
-                            Deepwater Consortium, Assistente Técnico do Diretor de Produção, Diretor do Gabinete do
-                            Administrador da Sonangol EP, e Diretor dos Blocos 4/05, 2/85 e 2/05, coordenando a
-                            transferência do Bloco 2/05 para a Somoil.
+                            Ao longo da sua carreira, ocupou cargos de liderança na Sonangol, incluindo Diretor de
+                            Produção, Assistente Técnico do Diretor de Produção, Diretor do Gabinete do Administrador da
+                            Sonangol EP, e Diretor dos Blocos 4/05, 2/85 e 2/05, com responsabilidade direta sobre o
+                            desenvolvimento, produção e gestão de ativos petrolíferos, incluindo a coordenação do
+                            processo de transferência do Bloco 2/05.
 
-                            Possui formação internacional em perfuração, subsea technologies e deepwater operations,
-                            complementada por cursos em gestão, liderança, gestão de custos e finanças para não
-                            financeiros.
+                            Possui ainda experiência técnica internacional em ambientes de elevada exigência, tendo
+                            atuado em Paris, na Doris Engineering, em estudos de campos marginais e confiabilidade de
+                            equipamentos submarinos em águas profundas da Bacia do Congo, complementando a sua vivência
+                            em engenharia avançada e operações offshore.
 
-                            É também docente universitário, leccionando disciplinas relacionadas à perfuração e
-                            operações de poço, combinando vasta experiência prática de campo com formação técnica
-                            avançada, capacitando profissionais para atuar de forma eficaz na indústria petrolífera.
+                            Iniciou a sua trajetória profissional no campo, participando em campanhas offshore de
+                            desenvolvimento dos poços do Bloco 3 (1987–1991), consolidando uma forte base em perfuração,
+                            MWD e operações offshore, que serviu de alicerce para a sua evolução para funções de
+                            engenharia, coordenação e gestão estratégica.
+
+                            É também docente universitário e formador técnico, lecionando disciplinas ligadas à
+                            perfuração e operações de poço, onde alia experiência prática real, engenharia de alto nível
+                            e visão de gestão, contribuindo para a formação de profissionais preparados para os desafios
+                            reais da indústria petrolífera.
                         </p>
                         <button class="btn-ver">ver mais</button>
                     </div>
                 </div>
-
-                <div class="swiper-slide swiper-slide--five">
-                    <div>
-                        <span> Eng.º Emanuel Leopoldo</span>
-                        <p>
-                            O Engenheiro Emanuel Leopoldo é engenheiro de petróleo angolano, com Mestrado em Engenharia de
-                            Petróleo pelo Imperial College London (1991) e Licenciatura em Engenharia Química pela
-                            Glamorgan University, Reino Unido (1986), com mais de 40 anos de experiência internacional
-                            na indústria de Oil, Gas e LNG, incluindo gestão executiva, operações e desenvolvimento de
-                            negócios. Construiu uma carreira sólida em empresas de referência, como Chevron, onde atuou
-                            por 34 anos em operações internacionais de petróleo, gás e LNG, BPC Angola no setor
-                            bancário, Petrofund Angola em investimentos privados, AFM Oil & Gas em desenvolvimento de
-                            negócios, e KAYA Soluções Climáticas em operações agroflorestais.
-
-                            Possui vasta experiência
-                            técnica e de gestão em operações e produção, reservatórios, HES/Excelência Operacional,
-                            planejamento estratégico e de negócios, coordenação de joint-ventures, serviços técnicos,
-                            gestão de projetos especiais e comerciais, cadeia de suprimentos, contratos, compliance,
-                            gestão de riscos, auditoria e qualidade organizacional.
-
-                            É também docente universitário,
-                            lecionando Engenharia Química e de Petróleo no ISPTEC e na Universidade Agostinho Neto,
-                            combinando ampla experiência de campo e corporativa com formação acadêmica avançada. Membro
-                            ativo de organizações internacionais como OEA, AIChemE, SPE, PMI, e certificado PMP,
-                            reforçando sua expertise em gestão de projetos e operações no setor energético.
-                        </p>
-                        <button class="btn-ver">ver mais</button>
-                    </div>
-                </div>
-            </div> -->
 
             </div>
+
             <div class="swiper-pagination"></div>
     </main>
 

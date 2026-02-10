@@ -1218,7 +1218,8 @@ footer .content-top {
         outline-offset: 6px;
     }
 
-         .titulo-swiper{
+         .titulo-swiper,
+         .swiper-top{
         display: flex ;
     }
 
